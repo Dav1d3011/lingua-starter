@@ -88,16 +88,19 @@ export default function DictPage() {
               From {ALL.find(L=>L.code===hit.from)?.label}:{' '}
               {hit.fromForms.map(a=>a.lemma).join(', ')}
             </div>
-            <div className="grid md:grid-cols-2 gap-3 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
               {to.map(code => {
                 const forms = hit.targets[code] || [];
-                const label = ALL.find(L=>L.code===code)?.label ?? code;
-                const dir   = ALL.find(L=>L.code===code)?.dir ?? 'ltr';
+                const L = ALL.find(L => L.code === code);
+                const dir = L?.dir ?? 'ltr';
+                const align = dir === 'rtl' ? 'text-right' : 'text-left';
                 return (
-                  <div key={code}>
-                    <div className="text-sm font-medium">{label}</div>
-                    <div className="text-sm" dir={dir}>
-                      {forms.length ? forms.map(a => a.lemma).join(', ') : <span className="opacity-60">—</span>}
+                  <div key={code} className="rounded-xl border p-3">
+                    <div className="text-sm font-medium mb-1">{L?.label ?? code}</div>
+                    <div className={`text-base leading-7 ${align}`} dir={dir}>
+                      {forms.length
+                        ? forms.map(a => a.lemma).join(', ')
+                        : <span className="opacity-60">—</span>}
                     </div>
                   </div>
                 );
