@@ -49,14 +49,20 @@ export default function Sidebar() {
           </div>
         )}
       </div>
-
+  
       <nav className="space-y-2">
         {items.map(f => (
           <Link key={f.id} href={f.route} className="block hover:underline">
             {f.label}
           </Link>
         ))}
+      
+        {/* ADD: static link to the dictionary page */}
+        <Link href="/dict" className="block hover:underline">
+          Dictionary
+        </Link>
       </nav>
+
 
       <div className="mt-auto text-xs opacity-60 pt-4">
         All features work without an account. Login only saves your progress.
