@@ -1,0 +1,63 @@
+{
+  "project": "Lingua",
+  "owner": "Dav1d3011",
+  "stack": {
+    "framework": "Next.js 14.2.5",
+    "language": "TypeScript",
+    "css": "Tailwind CSS",
+    "node": "20.x"
+  },
+  "deploy": {
+    "provider": "Vercel",
+    "prod_url": "https://lingua-starter.vercel.app",
+    "repo": "https://github.com/Dav1d3011/lingua-starter"
+  },
+  "principles": [
+    "Everything works without login; login only saves progress.",
+    "Keep costs $0; prefer built-in/OSS; avoid paid APIs.",
+    "RTL support for he/ar."
+  ],
+  "auth": {
+    "provider": "Supabase Auth (OAuth only)",
+    "google": true,
+    "passwords": false,
+    "env_required": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
+  },
+  "features": [
+    {"id": "phrases", "route": "/phrases", "status": "ready"},
+    {"id": "flashcards", "route": "/games/flashcards", "status": "ready"},
+    {"id": "dict", "route": "/dict", "status": "ready"}
+  ],
+  "dictionary": {
+    "seed_tsv": "seed/multilang.tsv",
+    "build_script": "scripts/build-dict.js",
+    "generated_json": "data/dict.json",
+    "api": "/api/dict?from=<code>&to=<csv>&q=<text>&limit=<n>",
+    "langs": ["en", "he", "ar", "ru"],
+    "id_range_hint": ">=3001",
+    "status": "bootstrapped (few meanings); plan to bulk-import ~1000"
+  },
+  "files_of_interest": [
+    "app/layout.tsx",
+    "components/Sidebar.tsx",
+    "app/dict/page.tsx",
+    "app/api/dict/route.ts",
+    "scripts/build-dict.js",
+    "seed/multilang.tsv",
+    "data/dict.json",
+    "lib/supabaseClient.ts",
+    "core/registry.ts",
+    "features/register.client.ts",
+    "package.json",
+    "tsconfig.json",
+    "next.config.mjs",
+    "tailwind.config.ts",
+    "README.md"
+  ],
+  "next_tasks": [
+    "Bulk-import ~1000 meanings (wiktextract pipeline) into seed/multilang.tsv, commit, let prebuild generate data/dict.json.",
+    "Add explanation-language selector to /dict (optional).",
+    "Add another learning game using /api/dict."
+  ],
+  "last_updated": "2025-10-05"
+}
