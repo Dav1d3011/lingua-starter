@@ -19,40 +19,42 @@ export default function Topbar() {
     return () => { sub.subscription?.unsubscribe(); };
   }, []);
 
+  async function signInWithGoogle() {
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/` : undefined,
+      },
+    });
+  }
+
   return (
     <header className="w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center">
         {/* Brand */}
         <Link href="/" className="font-bold text-lg mr-6">Lingua</Link>
 
-        {/* Main nav */}
+        {/* Main nav — no login link here */}
         <nav className="flex items-center gap-4 text-sm">
-          {/* Show login/register link only when NOT signed in (avoid flicker with `mounted`) */}
-          {mounted && !user && (
-            <Link href="/login" className="hover:underline">Logic/Register</Link>
-          )}
           <Link href="/dict" className="hover:underline">Dictionary</Link>
           <Link href="/games" className="hover:underline">Games</Link>
         </nav>
 
-        {/* Right side */}
+        {/* Right side: single auth area */}
         <div className="ml-auto flex items-center gap-3 text-sm">
-          {user ? (
+          {mounted && user ? (
             <>
               <span className="opacity-70">
                 Signed in as <span className="font-medium">{user.email}</span>
               </span>
-              <button
-                className="border rounded-xl px-3 py-1"
-                onClick={() => supabase.auth.signOut()}
-              >
+              <button className="border rounded-xl px-3 py-1" onClick={() => supabase.auth.signOut()}>
                 Sign out
               </button>
             </>
           ) : (
-            <Link className="border rounded-xl px-3 py-1" href="/login">
+            <button className="border rounded-xl px-3 py-1" onClick={signInWithGoogle}>
               Log in / Sign up
-            </Link>
+            </button>
           )}
         </div>
       </div>
