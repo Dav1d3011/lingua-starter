@@ -1,0 +1,164 @@
+[
+  {
+    "id": 3001,
+    "gloss": "bank",
+    "aliases": {
+      "en": [
+        {
+          "lemma": "bank",
+          "pos": "noun"
+        },
+        {
+          "lemma": "banks",
+          "pos": "noun"
+        }
+      ],
+      "es": [
+        {
+          "lemma": "banco",
+          "pos": "noun"
+        },
+        {
+          "lemma": "bancos",
+          "pos": "noun"
+        }
+      ],
+      "he": [
+        {
+          "lemma": "בנק",
+          "pos": "noun"
+        },
+        {
+          "lemma": "בנקים",
+          "pos": "noun"
+        }
+      ],
+      "ru": [
+        {
+          "lemma": "банк",
+          "pos": "noun"
+        },
+        {
+          "lemma": "банки",
+          "pos": "noun"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3002,
+    "gloss": "run",
+    "aliases": {
+      "en": [
+        {
+          "lemma": "run",
+          "pos": "verb"
+        },
+        {
+          "lemma": "runs",
+          "pos": "verb"
+        },
+        {
+          "lemma": "running",
+          "pos": "verb"
+        },
+        {
+          "lemma": "ran",
+          "pos": "verb"
+        }
+      ],
+      "es": [
+        {
+          "lemma": "correr",
+          "pos": "verb"
+        },
+        {
+          "lemma": "corre",
+          "pos": "verb"
+        },
+        {
+          "lemma": "corriendo",
+          "pos": "verb"
+        },
+        {
+          "lemma": "corrió",
+          "pos": "verb"
+        }
+      ],
+      "he": [
+        {
+          "lemma": "לרוץ",
+          "pos": "verb"
+        },
+        {
+          "lemma": "רץ",
+          "pos": "verb"
+        },
+        {
+          "lemma": "רצה",
+          "pos": "verb"
+        }
+      ],
+      "ru": [
+        {
+          "lemma": "бегать",
+          "pos": "verb"
+        },
+        {
+          "lemma": "бегу",
+          "pos": "verb"
+        },
+        {
+          "lemma": "бежал",
+          "pos": "verb"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3003,
+    "gloss": "light",
+    "aliases": {
+      "en": [
+        {
+          "lemma": "light",
+          "pos": "noun"
+        },
+        {
+          "lemma": "lights",
+          "pos": "noun"
+        }
+      ],
+      "es": [
+        {
+          "lemma": "luz",
+          "pos": "noun"
+        },
+        {
+          "lemma": "luces",
+          "pos": "noun"
+        }
+      ],
+      "he": [
+        {
+          "lemma": "אור",
+          "pos": "noun"
+        },
+        {
+          "lemma": "אורות",
+          "pos": "noun"
+        }
+      ],
+      "ru": [
+        {
+          "lemma": "свет",
+          "pos": "noun"
+        },
+        {
+          "lemma": "огни",
+          "pos": "noun"
+        }
+      ]
+    }
+  }
+]

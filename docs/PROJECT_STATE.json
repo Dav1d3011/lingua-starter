@@ -29,13 +29,13 @@
     {"id": "dict", "route": "/dict", "status": "ready"}
   ],
   "dictionary": {
-    "seed_tsv": "seed/multilang.tsv",
+    "seed_tsv": "seed/meanings.tsv + seed/langs/*.tsv (preferred) OR seed/multilang.tsv (legacy)",
     "build_script": "scripts/build-dict.js",
     "generated_json": "data/dict.json",
     "api": "/api/dict?from=<code>&to=<csv>&q=<text>&limit=<n>",
-    "langs": ["en", "he", "ar", "ru"],
+    "langs": [ "en", "es", "he", "ru" ],
     "id_range_hint": ">=3001",
-    "status": "bootstrapped (few meanings); plan to bulk-import ~1000"
+    "status": "split model enabled; target 1000+ meanings per language"
   },
   "files_of_interest": [
     "app/layout.tsx",
